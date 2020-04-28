@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.2.2 (swift-5.2.2-RELEASE)"
+options: "566d0cc6e578b5b4f4aeaf10540eb820"
+build_time: [1588095391, 179806000]
+inputs:
+  "/Users/manuelkorfmann/jewel/ext/Hello/Sources/Hello/Hello.swift": [9223372036, 854775807]

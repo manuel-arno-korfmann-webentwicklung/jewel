@@ -1,0 +1,91 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "Hello-debug.dylib": ["<Hello-debug.dylib>"]
+  "Hello-debug.module": ["<Hello-debug.module>"]
+  "HelloPackageTests-debug.test": ["<HelloPackageTests-debug.test>"]
+  "HelloTests-debug.module": ["<HelloTests-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<Hello-debug.dylib>","<Hello-debug.module>"]
+  "test": ["<Hello-debug.dylib>","<Hello-debug.module>","<HelloPackageTests-debug.test>","<HelloTests-debug.module>"]
+default: "main"
+nodes:
+  "/Users/manuelkorfmann/jewel/ext/Hello/Sources/Hello/":
+    is-directory-structure: true
+  "/Users/manuelkorfmann/jewel/ext/Hello/Tests/HelloTests/":
+    is-directory-structure: true
+commands:
+  "<Hello-debug.dylib>":
+    tool: phony
+    inputs: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/libHello.dylib"]
+    outputs: ["<Hello-debug.dylib>"]
+
+  "<Hello-debug.module>":
+    tool: phony
+    inputs: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.build/Hello.swift.o","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.swiftmodule"]
+    outputs: ["<Hello-debug.module>"]
+
+  "<HelloPackageTests-debug.test>":
+    tool: phony
+    inputs: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloPackageTests.xctest/Contents/MacOS/HelloPackageTests"]
+    outputs: ["<HelloPackageTests-debug.test>"]
+
+  "<HelloTests-debug.module>":
+    tool: phony
+    inputs: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/HelloTests.swift.o","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/XCTestManifests.swift.o","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.swiftmodule"]
+    outputs: ["<HelloTests-debug.module>"]
+
+  "C.Hello-debug.dylib":
+    tool: shell
+    inputs: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.build/Hello.swift.o"]
+    outputs: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/libHello.dylib"]
+    description: "Linking ./.build/x86_64-apple-macosx/debug/libHello.dylib"
+    args: ["/Library/Developer/Toolchains/swift-5.2.2-RELEASE.xctoolchain/usr/bin/swiftc","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug","-o","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/libHello.dylib","-module-name","Hello","-emit-library","-Xlinker","-install_name","-Xlinker","@rpath/libHello.dylib","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.product/Objects.LinkFileList","-target","x86_64-apple-macosx10.10","-Xlinker","-add_ast_path","-Xlinker","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.swiftmodule","-L","/Library/Developer/Toolchains/swift-5.2.2-RELEASE.xctoolchain/usr/lib"]
+
+  "C.Hello-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/manuelkorfmann/jewel/ext/Hello/Sources/Hello/Hello.swift"]
+    outputs: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.build/Hello.swift.o","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.swiftmodule"]
+    executable: "/Library/Developer/Toolchains/swift-5.2.2-RELEASE.xctoolchain/usr/bin/swiftc"
+    module-name: "Hello"
+    module-output-path: "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.swiftmodule"
+    import-paths: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.build"
+    objects: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.build/Hello.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.10","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/index/store","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Onone","-enable-testing","-g","-j12","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-emit-objc-header","-emit-objc-header-path","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.build/Hello-Swift.h","-color-diagnostics"]
+    sources: ["/Users/manuelkorfmann/jewel/ext/Hello/Sources/Hello/Hello.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 12
+
+  "C.HelloPackageTests-debug.test":
+    tool: shell
+    inputs: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.build/Hello.swift.o","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/HelloTests.swift.o","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/XCTestManifests.swift.o"]
+    outputs: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloPackageTests.xctest/Contents/MacOS/HelloPackageTests"]
+    description: "Linking ./.build/x86_64-apple-macosx/debug/HelloPackageTests.xctest/Contents/MacOS/HelloPackageTests"
+    args: ["/Library/Developer/Toolchains/swift-5.2.2-RELEASE.xctoolchain/usr/bin/swiftc","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug","-o","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloPackageTests.xctest/Contents/MacOS/HelloPackageTests","-module-name","HelloPackageTests","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Library/Developer/Toolchains/swift-5.2.2-RELEASE.xctoolchain/usr/lib/swift/macosx","-target","x86_64-apple-macosx10.10","-Xlinker","-add_ast_path","-Xlinker","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.swiftmodule","-L","/Library/Developer/Toolchains/swift-5.2.2-RELEASE.xctoolchain/usr/lib"]
+
+  "C.HelloTests-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/manuelkorfmann/jewel/ext/Hello/Tests/HelloTests/HelloTests.swift","/Users/manuelkorfmann/jewel/ext/Hello/Tests/HelloTests/XCTestManifests.swift","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.swiftmodule"]
+    outputs: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/HelloTests.swift.o","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/XCTestManifests.swift.o","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.swiftmodule"]
+    executable: "/Library/Developer/Toolchains/swift-5.2.2-RELEASE.xctoolchain/usr/bin/swiftc"
+    module-name: "HelloTests"
+    module-output-path: "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.swiftmodule"
+    import-paths: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build"
+    objects: ["/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/HelloTests.swift.o","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/XCTestManifests.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.10","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/index/store","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Onone","-enable-testing","-g","-j12","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-color-diagnostics"]
+    sources: ["/Users/manuelkorfmann/jewel/ext/Hello/Tests/HelloTests/HelloTests.swift","/Users/manuelkorfmann/jewel/ext/Hello/Tests/HelloTests/XCTestManifests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 12
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/manuelkorfmann/jewel/ext/Hello/Sources/Hello/","/Users/manuelkorfmann/jewel/ext/Hello/Tests/HelloTests/","/Users/manuelkorfmann/jewel/ext/Hello/Package.swift","/Users/manuelkorfmann/jewel/ext/Hello/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

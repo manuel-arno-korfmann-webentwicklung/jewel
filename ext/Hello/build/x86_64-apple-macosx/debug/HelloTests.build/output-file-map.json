@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/master.swiftdeps"
+  },
+  "/Users/manuelkorfmann/jewel/ext/Hello/Tests/HelloTests/HelloTests.swift": {
+    "dependencies": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/HelloTests.d",
+    "object": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/HelloTests.swift.o",
+    "swiftmodule": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/HelloTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/HelloTests.swiftdeps"
+  },
+  "/Users/manuelkorfmann/jewel/ext/Hello/Tests/HelloTests/XCTestManifests.swift": {
+    "dependencies": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/XCTestManifests.d",
+    "object": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/XCTestManifests.swift.o",
+    "swiftmodule": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/XCTestManifests~partial.swiftmodule",
+    "swift-dependencies": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/HelloTests.build/XCTestManifests.swiftdeps"
+  }
+}

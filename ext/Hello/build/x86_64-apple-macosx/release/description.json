@@ -1,0 +1,25 @@
+{
+  "allExecutables" : [
+
+  ],
+  "builtTestProducts" : [
+    {
+      "packageName" : "Hello",
+      "productName" : "HelloPackageTests",
+      "testBinary" : "\/Users\/manuelkorfmann\/jewel\/ext\/Hello\/.build\/x86_64-apple-macosx\/release\/HelloPackageTests.xctest\/Contents\/MacOS\/HelloPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "rootExecutables" : [
+
+  ],
+  "swiftTargetMap" : {
+    "C.Hello-release.module" : "Hello",
+    "C.HelloTests-release.module" : "HelloTests"
+  },
+  "testDiscoveryCommands" : {
+
+  }
+}

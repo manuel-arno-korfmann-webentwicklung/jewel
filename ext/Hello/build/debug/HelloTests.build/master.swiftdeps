@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.2.2 (swift-5.2.2-RELEASE)"
+options: "42813aeb471bd1dbec1971788c1dcfc3"
+build_time: [1588092316, 136934000]
+inputs:
+  "/Users/manuelkorfmann/jewel/ext/Hello/Tests/HelloTests/HelloTests.swift": !dirty [1588089794, 195162319]
+  "/Users/manuelkorfmann/jewel/ext/Hello/Tests/HelloTests/XCTestManifests.swift": [1588089794, 195426443]

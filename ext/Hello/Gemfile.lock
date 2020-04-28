@@ -1,0 +1,17 @@
+GIT
+  remote: https://github.com/manuel-arno-korfmann-webentwicklung/fiddle.git
+  revision: 55c3fd7fda4567bd99eb3dfae7208322404619e7
+  specs:
+    fiddle (1.0.1)
+
+GEM
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  fiddle!
+
+BUNDLED WITH
+   2.1.4

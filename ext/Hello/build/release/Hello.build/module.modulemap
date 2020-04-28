@@ -1,0 +1,4 @@
+module Hello {
+    header "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/release/Hello.build/Hello-Swift.h"
+    requires objc
+}

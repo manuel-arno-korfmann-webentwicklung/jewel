@@ -1,0 +1,21 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "gravity"
+- "calculateWeight"
+provides-nominal:
+provides-member:
+provides-dynamic-lookup:
+depends-top-level:
+- !private "*"
+- "Double"
+- "FloatLiteralType"
+- "calculateWeight"
+- "gravity"
+depends-member:
+depends-nominal:
+depends-dynamic-lookup:
+depends-external:
+- "/Library/Developer/Toolchains/swift-5.2.2-RELEASE.xctoolchain/usr/lib/swift/macosx/Swift.swiftmodule/x86_64.swiftmodule"
+- "/Library/Developer/Toolchains/swift-5.2.2-RELEASE.xctoolchain/usr/lib/swift/macosx/SwiftOnoneSupport.swiftmodule/x86_64.swiftmodule"
+- "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.build/module.modulemap"
+interface-hash: "80e84a68d8693c782c73435aa26f6545"

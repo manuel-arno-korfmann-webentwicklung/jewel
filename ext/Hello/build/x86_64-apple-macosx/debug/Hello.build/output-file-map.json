@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.build/master.swiftdeps"
+  },
+  "/Users/manuelkorfmann/jewel/ext/Hello/Sources/Hello/Hello.swift": {
+    "dependencies": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.build/Hello.d",
+    "object": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.build/Hello.swift.o",
+    "swiftmodule": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.build/Hello~partial.swiftmodule",
+    "swift-dependencies": "/Users/manuelkorfmann/jewel/ext/Hello/.build/x86_64-apple-macosx/debug/Hello.build/Hello.swiftdeps"
+  }
+}
